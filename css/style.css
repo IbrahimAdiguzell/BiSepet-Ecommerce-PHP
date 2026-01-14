@@ -1,0 +1,310 @@
+/*
+|--------------------------------------------------------------------------
+| BiSepet - Main Stylesheet
+|--------------------------------------------------------------------------
+| This file contains custom overrides for Bootstrap 5 and specific 
+| component styles for the e-commerce platform.
+|
+| Author: BiSepet Dev Team
+| Version: 1.0.0
+*/
+
+:root {
+    --primary-color: #02A676;       /* BiSepet Yeşili */
+    --primary-dark: #007369;        /* Koyu Yeşil */
+    --primary-gradient: linear-gradient(135deg, #003840, #007369, #02A676);
+    --secondary-bg: #f4f6f9;        /* Açık Gri Arka Plan */
+    --text-dark: #2c3e50;
+    --card-radius: 12px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-bg);
+    color: #444;
+}
+
+/*
+|--------------------------------------------------------------------------
+| 1. Global Components
+|--------------------------------------------------------------------------
+*/
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.api-banner {
+    background-color: #e9ecef;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Custom Buttons (Bootstrap Override) */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.transition-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(2, 166, 118, 0.2);
+}
+
+/*
+|--------------------------------------------------------------------------
+| 2. Product Cards & Catalog
+|--------------------------------------------------------------------------
+*/
+
+.product-card {
+    background-color: #fff;
+    border: none;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover; /* Resmi kutuya sığdırır, bozmaz */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+}
+
+/* Category Cards (Index) */
+.cat-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 200px;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cat-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.6);
+}
+
+.cat-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| 3. Hero & Banners
+|--------------------------------------------------------------------------
+*/
+
+.hero, .checkout-hero {
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 56, 64, 0.2);
+}
+
+.hero h1, .checkout-hero h1 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.deal-section {
+    background: linear-gradient(45deg, #02A676, #00cdac);
+    color: white;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 50px 0;
+    box-shadow: 0 10px 25px rgba(2, 166, 118, 0.25);
+}
+
+/*
+|--------------------------------------------------------------------------
+| 4. Admin Panel & Sidebar
+|--------------------------------------------------------------------------
+*/
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 260px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.admin-content {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Admin Tables */
+.admin-content table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.admin-content th {
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+}
+
+/*
+|--------------------------------------------------------------------------
+| 5. AI Module & Animations
+|--------------------------------------------------------------------------
+*/
+
+.ai-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 20px 50px rgba(118, 75, 162, 0.3);
+    color: white;
+    border-radius: 20px;
+}
+
+.ai-bg-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate { 
+    100% { transform: rotate(360deg); } 
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*
+|--------------------------------------------------------------------------
+| 6. Forms & Inputs
+|--------------------------------------------------------------------------
+*/
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(2, 166, 118, 0.25);
+}
+
+.service-box {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    text-align: center;
+    height: 100%;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: inline-block;
+}
