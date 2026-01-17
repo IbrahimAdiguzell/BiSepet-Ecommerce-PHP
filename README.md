@@ -56,11 +56,7 @@ BiSepet is a robust, secure, and modern e-commerce platform built from scratch u
     * Visit `http://localhost/BiSepet-Ecommerce-PHP` in your browser.
 
 ## 📸 Screenshots
-
-*(Buraya projenin ekran görüntülerini eklersen harika olur. GitHub'da Issues kısmına resim sürükleyip linkini buraya yapıştırabilirsin.)*
-
 ## 📄 License
-
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
